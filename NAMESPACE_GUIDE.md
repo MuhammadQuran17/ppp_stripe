@@ -1,17 +1,17 @@
 # Namespace Customization Guide
 
-This package uses the `YourVendor\PPPStripe` namespace. To customize it for your organization:
+This package uses the `MuhammadQuran\PPPStripe` namespace. To customize it for your organization:
 
 ## Step 1: Update Composer.json
 
-Replace `your-vendor` and `YourVendor` with your actual vendor name throughout the project:
+Replace `muhammad-quran` and `MuhammadQuran` with your actual vendor name throughout the project:
 
 ```json
 {
-  "name": "your-vendor/ppp-stripe",
+  "name": "muhammad-quran/ppp-stripe",
   "autoload": {
     "psr-4": {
-      "YourVendor\\PPPStripe\\": "src/"
+      "MuhammadQuran\\PPPStripe\\": "src/"
     }
   }
 }
@@ -45,7 +45,7 @@ All files in the `src/` directory should have their namespaces updated to match 
 ### Example:
 Change all occurrences of:
 ```php
-namespace YourVendor\PPPStripe\...
+namespace MuhammadQuran\PPPStripe\...
 ```
 
 To:
@@ -59,7 +59,7 @@ namespace Acme\PPPStripe\...
 "extra": {
   "laravel": {
     "providers": [
-      "YourVendor\\PPPStripe\\PPPStripeServiceProvider"
+      "MuhammadQuran\\PPPStripe\\PPPStripeServiceProvider"
     ]
   }
 }
@@ -81,8 +81,8 @@ To:
 When using this package in consuming applications, import from your custom namespace:
 
 ```php
-use YourVendor\PPPStripe\Services\Pricing\PPPService;
-use YourVendor\PPPStripe\Http\Controllers\PurchaseController;
+use MuhammadQuran\PPPStripe\Services\Pricing\PPPService;
+use MuhammadQuran\PPPStripe\Http\Controllers\PurchaseController;
 ```
 
 Becomes:

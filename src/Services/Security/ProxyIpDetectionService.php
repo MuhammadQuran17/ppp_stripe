@@ -1,6 +1,6 @@
 <?php
 
-namespace YourVendor\PPPStripe\Services\Security;
+namespace MuhammadQuran\PPPStripe\Services\Security;
 
 final class ProxyIpDetectionService
 {

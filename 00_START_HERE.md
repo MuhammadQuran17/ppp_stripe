@@ -86,7 +86,7 @@ USAGE_EXAMPLES.md             ← Complete code examples
 ### For You (Package Creator)
 
 1. **Customize Vendor Name** (IMPORTANT!)
-   - Replace `YourVendor` → your actual vendor name everywhere
+   - Replace `MuhammadQuran` → your actual vendor name everywhere
    - See `NAMESPACE_GUIDE.md` for step-by-step instructions
 
 2. **Test the Package**
@@ -99,13 +99,13 @@ USAGE_EXAMPLES.md             ← Complete code examples
 3. **Publish to Packagist** (when ready)
    - Push to GitHub/GitLab
    - Register at packagist.org
-   - Users can then: `composer require your-vendor/ppp-stripe`
+   - Users can then: `composer require muhammad-quran/ppp-stripe`
 
 ### For Users of Your Package
 
 1. **Install via Composer**
    ```bash
-   composer require your-vendor/ppp-stripe
+   composer require muhammad-quran/ppp-stripe
    ```
 
 2. **Publish Assets**
@@ -123,7 +123,7 @@ USAGE_EXAMPLES.md             ← Complete code examples
 
 4. **Use in Code**
    ```php
-   use YourVendor\PPPStripe\Services\Pricing\PPPService;
+   use MuhammadQuran\PPPStripe\Services\Pricing\PPPService;
    
    class CheckoutController {
        public function show(PPPService $pppService) {
@@ -140,7 +140,7 @@ USAGE_EXAMPLES.md             ← Complete code examples
 All code uses PSR-4 compliant namespaces:
 
 ```
-YourVendor\PPPStripe\
+MuhammadQuran\PPPStripe\
 ├── PPPStripeServiceProvider
 ├── Commands\ImportPPPData
 ├── Config\ (configuration, not a namespace)
@@ -156,7 +156,7 @@ YourVendor\PPPStripe\
 ```json
 "autoload": {
   "psr-4": {
-    "YourVendor\\PPPStripe\\": "src/"
+    "MuhammadQuran\\PPPStripe\\": "src/"
   }
 }
 ```
@@ -255,7 +255,7 @@ php artisan migrate
 
 # Test in tinker
 php artisan tinker
->>> app('YourVendor\PPPStripe\Services\Pricing\PPPService')
+>>> app('MuhammadQuran\PPPStripe\Services\Pricing\PPPService')
 ```
 
 ---

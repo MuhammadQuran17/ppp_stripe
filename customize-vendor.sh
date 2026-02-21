@@ -1,8 +1,4 @@
 #!/bin/bash
-
-# PPP Stripe Package - Vendor Name Customization Script
-# This script helps you quickly customize the vendor name throughout the package
-
 echo "==================================================="
 echo "PPP Stripe - Vendor Name Customization Script"
 echo "==================================================="
@@ -10,6 +6,7 @@ echo ""
 
 # Check if vendor name is provided
 if [ -z "$1" ]; then
+    echo "Error: Vendor name is required"
     echo "Usage: bash customize-vendor.sh <YourVendorName>"
     echo ""
     echo "Examples:"

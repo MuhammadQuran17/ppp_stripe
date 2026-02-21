@@ -47,18 +47,18 @@ ppp-stripe/
 
 ## Namespace Mapping
 
-All files use the `YourVendor\PPPStripe` namespace structure. **Update this before publishing!**
+All files use the `MuhammadQuran\PPPStripe` namespace structure. **Update this before publishing!**
 
 ```
 File Path                                    → Namespace
 ────────────────────────────────────────────────────────────────────
-src/PPPStripeServiceProvider.php            → YourVendor\PPPStripe\PPPStripeServiceProvider
-src/Commands/ImportPPPData.php              → YourVendor\PPPStripe\Commands\ImportPPPData
+src/PPPStripeServiceProvider.php            → MuhammadQuran\PPPStripe\PPPStripeServiceProvider
+src/Commands/ImportPPPData.php              → MuhammadQuran\PPPStripe\Commands\ImportPPPData
 src/Config/subscription-plans.php           → (config file, not a class)
 src/Database/Migrations/...php              → (migration file)
-src/Http/Controllers/PurchaseController.php → YourVendor\PPPStripe\Http\Controllers\PurchaseController
-src/Services/Pricing/PPPService.php         → YourVendor\PPPStripe\Services\Pricing\PPPService
-src/Services/Security/ProxyIpDetectionService.php → YourVendor\PPPStripe\Services\Security\ProxyIpDetectionService
+src/Http/Controllers/PurchaseController.php → MuhammadQuran\PPPStripe\Http\Controllers\PurchaseController
+src/Services/Pricing/PPPService.php         → MuhammadQuran\PPPStripe\Services\Pricing\PPPService
+src/Services/Security/ProxyIpDetectionService.php → MuhammadQuran\PPPStripe\Services\Security\ProxyIpDetectionService
 ```
 
 ## PSR-4 Autoloading
@@ -68,12 +68,12 @@ Configured in `composer.json`:
 ```json
 "autoload": {
   "psr-4": {
-    "YourVendor\\PPPStripe\\": "src/"
+    "MuhammadQuran\\PPPStripe\\": "src/"
   }
 },
 "autoload-dev": {
   "psr-4": {
-    "YourVendor\\PPPStripe\\Tests\\": "tests/"
+    "MuhammadQuran\\PPPStripe\\Tests\\": "tests/"
   }
 }
 ```
@@ -100,22 +100,22 @@ The ServiceProvider automatically:
 The package registers these services automatically:
 
 ```php
-app()->make('YourVendor\PPPStripe\Services\Pricing\PPPService');
-app()->make('YourVendor\PPPStripe\Services\Security\ProxyIpDetectionService');
+app()->make('MuhammadQuran\PPPStripe\Services\Pricing\PPPService');
+app()->make('MuhammadQuran\PPPStripe\Services\Security\ProxyIpDetectionService');
 ```
 
 ## How to Customize Vendor Name
 
 **Before publishing to Composer:**
 
-1. Search and replace `YourVendor` → `YourActualVendor` in:
+1. Search and replace `MuhammadQuran` → `YourActualVendor` in:
    - `composer.json`
    - `src/PPPStripeServiceProvider.php`
    - All files in `src/` directory
 
 2. Update `composer.json` name:
    ```json
-   "name": "your-vendor/ppp-stripe"
+   "name": "muhammad-quran/ppp-stripe"
    ```
 
 3. Update `composer.json` extra section:
@@ -123,7 +123,7 @@ app()->make('YourVendor\PPPStripe\Services\Security\ProxyIpDetectionService');
    "extra": {
      "laravel": {
        "providers": [
-         "YourVendor\\PPPStripe\\PPPStripeServiceProvider"
+         "MuhammadQuran\\PPPStripe\\PPPStripeServiceProvider"
        ]
      }
    }
@@ -143,7 +143,7 @@ See `NAMESPACE_GUIDE.md` for detailed instructions.
 - [ ] Configure CI/CD pipelines
 
 ### For Package Consumers
-- [ ] Run `composer require your-vendor/ppp-stripe`
+- [ ] Run `composer require muhammad-quran/ppp-stripe`
 - [ ] Run `php artisan vendor:publish --tag=ppp-stripe-config`
 - [ ] Run `php artisan vendor:publish --tag=ppp-stripe-migrations`
 - [ ] Run `php artisan vendor:publish --tag=ppp-stripe-data`
@@ -175,11 +175,11 @@ Verify package structure:
 composer validate
 
 # List package files
-composer show -t -l your-vendor/ppp-stripe
+composer show -t -l muhammad-quran/ppp-stripe
 
 # Test autoloading
 php artisan tinker
->>> class_exists('YourVendor\PPPStripe\PPPStripeServiceProvider')
+>>> class_exists('MuhammadQuran\PPPStripe\PPPStripeServiceProvider')
 ```
 
 ## Next Steps

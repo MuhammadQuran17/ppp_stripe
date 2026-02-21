@@ -37,14 +37,14 @@ NEW (Package Structure)
 
 ### Namespace Changes
 
-All namespaces have been refactored from `App\*` to `YourVendor\PPPStripe\*`:
+All namespaces have been refactored from `App\*` to `MuhammadQuran\PPPStripe\*`:
 
 | Original | New |
 |----------|-----|
-| `App\Http\Controllers\PurchaseController` | `YourVendor\PPPStripe\Http\Controllers\PurchaseController` |
-| `App\Services\Pricing\PPPService` | `YourVendor\PPPStripe\Services\Pricing\PPPService` |
-| `App\Services\Security\ProxyIpDetectionService` | `YourVendor\PPPStripe\Services\Security\ProxyIpDetectionService` |
-| `App\Console\Commands\ImportPPPData` | `YourVendor\PPPStripe\Commands\ImportPPPData` |
+| `App\Http\Controllers\PurchaseController` | `MuhammadQuran\PPPStripe\Http\Controllers\PurchaseController` |
+| `App\Services\Pricing\PPPService` | `MuhammadQuran\PPPStripe\Services\Pricing\PPPService` |
+| `App\Services\Security\ProxyIpDetectionService` | `MuhammadQuran\PPPStripe\Services\Security\ProxyIpDetectionService` |
+| `App\Console\Commands\ImportPPPData` | `MuhammadQuran\PPPStripe\Commands\ImportPPPData` |
 
 ---
 
@@ -85,11 +85,11 @@ All namespaces have been refactored from `App\*` to `YourVendor\PPPStripe\*`:
 
 ### Step 1: Customize Your Vendor Name
 
-The package currently uses placeholder `YourVendor` namespace. You **MUST** change this:
+The package currently uses placeholder `MuhammadQuran` namespace. You **MUST** change this:
 
 **Search and Replace in all files:**
-- Replace `your-vendor` with your actual vendor name (e.g., `acme`, `mycompany`)
-- Replace `YourVendor` with your actual vendor name in PascalCase (e.g., `Acme`, `MyCompany`)
+- Replace `muhammad-quran` with your actual vendor name (e.g., `acme`, `mycompany`)
+- Replace `MuhammadQuran` with your actual vendor name in PascalCase (e.g., `Acme`, `MyCompany`)
 
 **Files to update:**
 1. `composer.json` - Update `name` field and `extra.laravel.providers`
@@ -100,10 +100,10 @@ The package currently uses placeholder `YourVendor` namespace. You **MUST** chan
 ```json
 // Before
 {
-  "name": "your-vendor/ppp-stripe",
+  "name": "muhammad-quran/ppp-stripe",
   "extra": {
     "laravel": {
-      "providers": ["YourVendor\\PPPStripe\\PPPStripeServiceProvider"]
+      "providers": ["MuhammadQuran\\PPPStripe\\PPPStripeServiceProvider"]
     }
   }
 }
@@ -125,7 +125,7 @@ See `NAMESPACE_GUIDE.md` for detailed instructions.
 
 ```json
 {
-  "name": "your-vendor/ppp-stripe",
+  "name": "muhammad-quran/ppp-stripe",
   "description": "...",
   "authors": [
     {
@@ -133,10 +133,10 @@ See `NAMESPACE_GUIDE.md` for detailed instructions.
       "email": "your@email.com"
     }
   ],
-  "homepage": "https://github.com/your-vendor/ppp-stripe",
+  "homepage": "https://github.com/muhammad-quran/ppp-stripe",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-vendor/ppp-stripe.git"
+    "url": "https://github.com/muhammad-quran/ppp-stripe.git"
   }
 }
 ```
@@ -177,7 +177,7 @@ Your package will be installed like this:
 
 ```bash
 # 1. Install via Composer
-composer require your-vendor/ppp-stripe
+composer require muhammad-quran/ppp-stripe
 
 # 2. Publish configuration
 php artisan vendor:publish --tag=ppp-stripe-config
@@ -239,9 +239,9 @@ In a consumer's Laravel app:
 
 namespace App\Http\Controllers;
 
-use YourVendor\PPPStripe\Services\Pricing\PPPService;
+use MuhammadQuran\PPPStripe\Services\Pricing\PPPService;
 // or use the ready-made controller:
-use YourVendor\PPPStripe\Http\Controllers\PurchaseController;
+use MuhammadQuran\PPPStripe\Http\Controllers\PurchaseController;
 
 class CheckoutController extends Controller
 {

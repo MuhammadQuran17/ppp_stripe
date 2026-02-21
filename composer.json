@@ -1,12 +1,12 @@
 {
-  "name": "your-vendor/ppp-stripe",
+  "name": "muhammad-quran/ppp-stripe",
   "description": "Laravel package for Purchasing Power Parity (PPP) pricing adjustment with Stripe integration",
   "type": "library",
   "license": "MIT",
   "authors": [
     {
-      "name": "Your Name",
-      "email": "your-email@example.com"
+      "name": "Muhammad Umar",
+      "email": "muhammadumarsotvoldiev@gmail.com"
     }
   ],
   "require": {
@@ -22,18 +22,18 @@
   },
   "autoload": {
     "psr-4": {
-      "YourVendor\\PPPStripe\\": "src/"
+      "MuhammadQuran\\PPPStripe\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "YourVendor\\PPPStripe\\Tests\\": "tests/"
+      "MuhammadQuran\\PPPStripe\\Tests\\": "tests/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "YourVendor\\PPPStripe\\PPPStripeServiceProvider"
+        "MuhammadQuran\\PPPStripe\\PPPStripeServiceProvider"
       ],
       "aliases": {}
     }

@@ -14,7 +14,7 @@
 
 | Component | From | To | Status |
 |-----------|------|-----|--------|
-| **Namespace** | `App\*` | `YourVendor\PPPStripe\*` | ✅ Converted |
+| **Namespace** | `App\*` | `MuhammadQuran\PPPStripe\*` | ✅ Converted |
 | **Structure** | App-style folders | Package PSR-4 structure | ✅ Converted |
 | **Controllers** | `app/Http/Controllers/` | `src/Http/Controllers/` | ✅ Moved & Namespaced |
 | **Services** | `app/Services/` | `src/Services/` | ✅ Moved & Namespaced |
@@ -30,22 +30,22 @@
 ### Controllers
 ```
 OLD: app/Http/Controllers/PurchaseController.php (App\Http\Controllers\PurchaseController)
-NEW: src/Http/Controllers/PurchaseController.php (YourVendor\PPPStripe\Http\Controllers\PurchaseController)
+NEW: src/Http/Controllers/PurchaseController.php (MuhammadQuran\PPPStripe\Http\Controllers\PurchaseController)
 ```
 
 ### Services
 ```
 OLD: app/Services/Pricing/PPPService.php (App\Services\Pricing\PPPService)
-NEW: src/Services/Pricing/PPPService.php (YourVendor\PPPStripe\Services\Pricing\PPPService)
+NEW: src/Services/Pricing/PPPService.php (MuhammadQuran\PPPStripe\Services\Pricing\PPPService)
 
 OLD: app/Services/Security/ProxyIpDetectionService.php (App\Services\Security\ProxyIpDetectionService)
-NEW: src/Services/Security/ProxyIpDetectionService.php (YourVendor\PPPStripe\Services\Security\ProxyIpDetectionService)
+NEW: src/Services/Security/ProxyIpDetectionService.php (MuhammadQuran\PPPStripe\Services\Security\ProxyIpDetectionService)
 ```
 
 ### Commands
 ```
 OLD: app/Console/Commands/ImportPPPData.php (App\Console\Commands\ImportPPPData)
-NEW: src/Commands/ImportPPPData.php (YourVendor\PPPStripe\Commands\ImportPPPData)
+NEW: src/Commands/ImportPPPData.php (MuhammadQuran\PPPStripe\Commands\ImportPPPData)
 ```
 
 ### Configuration
@@ -121,10 +121,10 @@ namespace App\Services\Security;
 namespace App\Console\Commands;
 
 // New namespace pattern
-namespace YourVendor\PPPStripe\Http\Controllers;
-namespace YourVendor\PPPStripe\Services\Pricing;
-namespace YourVendor\PPPStripe\Services\Security;
-namespace YourVendor\PPPStripe\Commands;
+namespace MuhammadQuran\PPPStripe\Http\Controllers;
+namespace MuhammadQuran\PPPStripe\Services\Pricing;
+namespace MuhammadQuran\PPPStripe\Services\Security;
+namespace MuhammadQuran\PPPStripe\Commands;
 ```
 
 ### 2. Import Statement Updates
@@ -135,8 +135,8 @@ use App\Services\Pricing\PPPService;
 use App\Services\Security\ProxyIpDetectionService;
 
 // New
-use YourVendor\PPPStripe\Services\Pricing\PPPService;
-use YourVendor\PPPStripe\Services\Security\ProxyIpDetectionService;
+use MuhammadQuran\PPPStripe\Services\Pricing\PPPService;
+use MuhammadQuran\PPPStripe\Services\Security\ProxyIpDetectionService;
 ```
 
 ### 3. Service Provider Creation
@@ -157,7 +157,7 @@ Features:
 {
   "autoload": {
     "psr-4": {
-      "YourVendor\\PPPStripe\\": "src/"
+      "MuhammadQuran\\PPPStripe\\": "src/"
     }
   }
 }
@@ -170,7 +170,7 @@ Features:
   "extra": {
     "laravel": {
       "providers": [
-        "YourVendor\\PPPStripe\\PPPStripeServiceProvider"
+        "MuhammadQuran\\PPPStripe\\PPPStripeServiceProvider"
       ]
     }
   }
@@ -236,7 +236,7 @@ License:                ✅ MIT Included
 ### Before Publishing
 
 **Critical:**
-- [ ] Customize `YourVendor` → actual vendor name
+- [ ] Customize `MuhammadQuran` → actual vendor name
 - [ ] Update `composer.json` name field
 - [ ] Update author information
 - [ ] Add repository URL
@@ -269,7 +269,7 @@ License:                ✅ MIT Included
 ## 📋 Installation Flow for Users
 
 ```
-1. composer require your-vendor/ppp-stripe
+1. composer require muhammad-quran/ppp-stripe
    ↓
 2. Service Provider auto-loaded
    ↓
@@ -312,7 +312,7 @@ cd test-app
 composer require ../ppp_stripe
 php artisan vendor:publish --tag=ppp-stripe-config
 php artisan tinker
->>> class_exists('YourVendor\PPPStripe\Services\Pricing\PPPService')
+>>> class_exists('MuhammadQuran\PPPStripe\Services\Pricing\PPPService')
 ```
 
 ---
@@ -327,12 +327,12 @@ php artisan tinker
    use App\Services\Pricing\PPPService;
    
    // NEW
-   use YourVendor\PPPStripe\Services\Pricing\PPPService;
+   use MuhammadQuran\PPPStripe\Services\Pricing\PPPService;
    ```
 
 2. Install the package:
    ```bash
-   composer require your-vendor/ppp-stripe
+   composer require muhammad-quran/ppp-stripe
    ```
 
 3. Publish configuration and migrations

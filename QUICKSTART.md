@@ -6,7 +6,7 @@
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-vendor/ppp-stripe.git
+   git clone https://github.com/muhammad-quran/ppp-stripe.git
    cd ppp-stripe
    ```
 
@@ -32,19 +32,19 @@
 
 1. **Install the package**
    ```bash
-   composer require your-vendor/ppp-stripe
+   composer require muhammad-quran/ppp-stripe
    ```
 
 2. **Publish the assets**
    ```bash
    # Configuration
-   php artisan vendor:publish --provider="YourVendor\PPPStripe\PPPStripeServiceProvider" --tag="ppp-stripe-config"
+   php artisan vendor:publish --provider="MuhammadQuran\PPPStripe\PPPStripeServiceProvider" --tag="ppp-stripe-config"
    
    # Migrations
-   php artisan vendor:publish --provider="YourVendor\PPPStripe\PPPStripeServiceProvider" --tag="ppp-stripe-migrations"
+   php artisan vendor:publish --provider="MuhammadQuran\PPPStripe\PPPStripeServiceProvider" --tag="ppp-stripe-migrations"
    
    # PPP Data CSV
-   php artisan vendor:publish --provider="YourVendor\PPPStripe\PPPStripeServiceProvider" --tag="ppp-stripe-data"
+   php artisan vendor:publish --provider="MuhammadQuran\PPPStripe\PPPStripeServiceProvider" --tag="ppp-stripe-data"
    ```
 
 3. **Run migrations**
@@ -71,7 +71,7 @@ Create a checkout controller in your application:
 
 namespace App\Http\Controllers;
 
-use YourVendor\PPPStripe\Services\Pricing\PPPService;
+use MuhammadQuran\PPPStripe\Services\Pricing\PPPService;
 use Illuminate\Http\Request;
 
 class SubscriptionController extends Controller
@@ -93,7 +93,7 @@ class SubscriptionController extends Controller
     public function purchase(Request $request)
     {
         // Use the PurchaseController or implement custom logic
-        return app(YourVendor\PPPStripe\Http\Controllers\PurchaseController::class)($request);
+        return app(MuhammadQuran\PPPStripe\Http\Controllers\PurchaseController::class)($request);
     }
 }
 ```
@@ -104,7 +104,7 @@ In `routes/api.php`:
 
 ```php
 use App\Http\Controllers\SubscriptionController;
-use YourVendor\PPPStripe\Http\Controllers\PurchaseController;
+use MuhammadQuran\PPPStripe\Http\Controllers\PurchaseController;
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/pricing', [SubscriptionController::class, 'checkout']);
@@ -160,7 +160,7 @@ Use Laravel Pint for code formatting:
 
 ### Check if service is registered
 ```php
-dd(app('YourVendor\PPPStripe\Services\Pricing\PPPService'));
+dd(app('MuhammadQuran\PPPStripe\Services\Pricing\PPPService'));
 ```
 
 ### View all config
@@ -178,7 +178,7 @@ php artisan tinker
 ### Test IP detection
 ```php
 php artisan tinker
->>> app('YourVendor\PPPStripe\Services\Security\ProxyIpDetectionService')->isProxy('8.8.8.8')
+>>> app('MuhammadQuran\PPPStripe\Services\Security\ProxyIpDetectionService')->isProxy('8.8.8.8')
 ```
 
 ## Common Issues & Solutions
