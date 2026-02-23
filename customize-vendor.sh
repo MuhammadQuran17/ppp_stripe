@@ -7,7 +7,7 @@ echo ""
 # Check if vendor name is provided
 if [ -z "$1" ]; then
     echo "Error: Vendor name is required"
-    echo "Usage: bash customize-vendor.sh <YourVendorName>"
+    echo "Usage: bash customize-vendor.sh <MuhammadQuranName>"
     echo ""
     echo "Examples:"
     echo "  bash customize-vendor.sh Acme"
@@ -15,8 +15,8 @@ if [ -z "$1" ]; then
     echo "  bash customize-vendor.sh YourBrand"
     echo ""
     echo "This will replace:"
-    echo "  - YourVendor with your provided name (PascalCase)"
-    echo "  - your-vendor with your provided name (kebab-case)"
+    echo "  - MuhammadQuran with your provided name (PascalCase)"
+    echo "  - muhammad-quran with your provided name (kebab-case)"
     echo ""
     exit 1
 fi
@@ -30,17 +30,17 @@ echo ""
 
 # Find and replace in composer.json
 echo "📝 Updating composer.json..."
-sed -i "s/\"your-vendor\/ppp-stripe\"/\"$VENDOR_NAME_KEBAB\/ppp-stripe\"/g" composer.json
-sed -i "s/YourVendor/$VENDOR_NAME/g" composer.json
+sed -i "s/\"muhammad-quran\/ppp-stripe\"/\"$VENDOR_NAME_KEBAB\/ppp-stripe\"/g" composer.json
+sed -i "s/MuhammadQuran/$VENDOR_NAME/g" composer.json
 
 # Find and replace in all PHP files
 echo "📝 Updating PHP files..."
-find src -name "*.php" -type f -exec sed -i "s/YourVendor/$VENDOR_NAME/g" {} \;
+find src -name "*.php" -type f -exec sed -i "s/MuhammadQuran/$VENDOR_NAME/g" {} \;
 
 # Update README files
 echo "📝 Updating documentation..."
-find . -name "*.md" -type f -exec sed -i "s/YourVendor/$VENDOR_NAME/g" {} \;
-find . -name "*.md" -type f -exec sed -i "s/your-vendor/$VENDOR_NAME_KEBAB/g" {} \;
+find . -name "*.md" -type f -exec sed -i "s/MuhammadQuran/$VENDOR_NAME/g" {} \;
+find . -name "*.md" -type f -exec sed -i "s/muhammad-quran/$VENDOR_NAME_KEBAB/g" {} \;
 
 echo ""
 echo "✅ Customization complete!"

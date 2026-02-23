@@ -1,6 +1,6 @@
 <?php
 
-namespace MuhammadQuran\PPPStripe\Commands;
+namespace MuhammadUmar\PPPStripe\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;

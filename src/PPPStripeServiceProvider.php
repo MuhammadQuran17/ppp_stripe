@@ -1,11 +1,11 @@
 <?php
 
-namespace MuhammadQuran\PPPStripe;
+namespace MuhammadUmar\PPPStripe;
 
 use Illuminate\Support\ServiceProvider;
-use MuhammadQuran\PPPStripe\Commands\ImportPPPData;
-use MuhammadQuran\PPPStripe\Services\Pricing\PPPService;
-use MuhammadQuran\PPPStripe\Services\Security\ProxyIpDetectionService;
+use MuhammadUmar\PPPStripe\Commands\ImportPPPData;
+use MuhammadUmar\PPPStripe\Services\Pricing\PPPService;
+use MuhammadUmar\PPPStripe\Services\Security\ProxyIpDetectionService;
 
 class PPPStripeServiceProvider extends ServiceProvider
 {

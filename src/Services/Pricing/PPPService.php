@@ -1,11 +1,11 @@
 <?php
 
-namespace MuhammadQuran\PPPStripe\Services\Pricing;
+namespace MuhammadUmar\PPPStripe\Services\Pricing;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
-use MuhammadQuran\PPPStripe\Services\Security\ProxyIpDetectionService;
+use MuhammadUmar\PPPStripe\Services\Security\ProxyIpDetectionService;
 
 /**
  * Calculate Price adjusted to each country - PPP

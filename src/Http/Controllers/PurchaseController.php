@@ -1,8 +1,8 @@
 <?php
 
-namespace MuhammadQuran\PPPStripe\Http\Controllers;
+namespace MuhammadUmar\PPPStripe\Http\Controllers;
 
-use MuhammadQuran\PPPStripe\Services\Pricing\PPPService;
+use MuhammadUmar\PPPStripe\Services\Pricing\PPPService;
 use Illuminate\Http\Request;
 use Laravel\Cashier\Concerns\ManagesCustomer;
 

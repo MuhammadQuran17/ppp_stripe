@@ -25,7 +25,7 @@ A Laravel package that integrates Purchasing Power Parity (PPP) pricing adjustme
 ### Step 1: Install via Composer
 
 ```bash
-composer require muhammad-quran/ppp-stripe
+composer require muhammad-umar/ppp-stripe
 ```
 
 ### Step 2: Publish Assets
@@ -86,7 +86,7 @@ return [
 
 namespace App\Http\Controllers;
 
-use MuhammadQuran\PPPStripe\Services\Pricing\PPPService;
+use MuhammadUmar\PPPStripe\Services\Pricing\PPPService;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -125,7 +125,7 @@ From frontend, when user click on the buy button, you should send the request to
 
 ```php
 // In your routes/api.php
-Route::post('/checkout', MuhammadQuran\PPPStripe\Http\Controllers\PurchaseController::class)
+Route::post('/checkout', MuhammadUmar\PPPStripe\Http\Controllers\PurchaseController::class)
     ->middleware('auth');
 ```
 
@@ -194,7 +194,7 @@ You can extend the services by creating your own classes that extend the package
 
 namespace App\Services;
 
-use MuhammadQuran\PPPStripe\Services\Pricing\PPPService as BaseService;
+use MuhammadUmar\PPPStripe\Services\Pricing\PPPService as BaseService;
 
 class CustomPPPService extends BaseService
 {
