@@ -1,13 +1,15 @@
 <?php
 
-namespace MuhammadUmar\PPPStripe;
+namespace MuhammadUmar\PPPGateway;
 
 use Illuminate\Support\ServiceProvider;
-use MuhammadUmar\PPPStripe\Commands\ImportPPPData;
-use MuhammadUmar\PPPStripe\Services\Pricing\PPPService;
-use MuhammadUmar\PPPStripe\Services\Security\ProxyIpDetectionService;
+use MuhammadUmar\PPPGateway\Commands\ImportPPPData;
+use MuhammadUmar\PPPGateway\Services\Pricing\PPPService;
+use MuhammadUmar\PPPGateway\Services\Security\ProxyIpDetectionService;
+use Illuminate\Support\Facades\Route;
+use MuhammadUmar\PPPGateway\Http\Controllers\PurchaseController;
 
-class PPPStripeServiceProvider extends ServiceProvider
+class PPPGatewayServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
@@ -26,23 +28,24 @@ class PPPStripeServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        // Publish migrations
         $this->publishes([
             __DIR__ . '/Database/Migrations' => database_path('migrations'),
-        ], 'ppp-stripe-migrations');
+        ], 'ppp-gateway-migrations');
 
-        // Publish config
         $this->publishes([
             __DIR__ . '/Config/subscription-plans.php' => config_path('subscription-plans.php'),
-        ], 'ppp-stripe-config');
+        ], 'ppp-gateway-config');
 
         // Publish CSV data
         $this->publishes([
             __DIR__ . '/Resources/ppp_world.csv' => storage_path('app/private/ppp_world.csv'),
-        ], 'ppp-stripe-data');
+        ], 'ppp-gateway-data');
 
-        // Load migrations from package
         $this->loadMigrationsFrom(__DIR__ . '/Database/Migrations');
+
+        Route::middleware('auth')->group(function () {
+            Route::post('purchase', PurchaseController::class)->name('ppp-gateway.purchase');
+        });
 
         // Register commands
         if ($this->app->runningInConsole()) {
@@ -51,7 +54,6 @@ class PPPStripeServiceProvider extends ServiceProvider
             ]);
         }
 
-        // Merge configuration
         $this->mergeConfigFrom(
             __DIR__ . '/Config/subscription-plans.php',
             'subscription-plans'

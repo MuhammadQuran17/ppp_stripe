@@ -1,11 +1,11 @@
 <?php
 
-namespace MuhammadUmar\PPPStripe\Services\Pricing;
+namespace MuhammadUmar\PPPGateway\Services\Pricing;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
-use MuhammadUmar\PPPStripe\Services\Security\ProxyIpDetectionService;
+use MuhammadUmar\PPPGateway\Services\Security\ProxyIpDetectionService;
 
 /**
  * Calculate Price adjusted to each country - PPP
@@ -54,7 +54,6 @@ final class PPPService
     public function getCountryCodeIso2($ip): ?string
     {
         // First try using the 'CF-IPCountry' header from Cloudflare if present
-        // @TODO retest with Cloudflare
         if ($this->request->hasHeader('CF-IPCountry')) {
             $country_code_iso2 = $this->request->header('CF-IPCountry');
         } else {
@@ -67,7 +66,7 @@ final class PPPService
                     : null;
             }, null, false);
 
-            // flags will be here https://cdn.ipwhois.io/flags/uz.svg
+            // flags will be here https://cdn.ipwhois.io/flags/uz.svg if neccessary
         }
 
         return $country_code_iso2;

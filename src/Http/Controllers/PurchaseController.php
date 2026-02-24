@@ -1,8 +1,8 @@
 <?php
 
-namespace MuhammadUmar\PPPStripe\Http\Controllers;
+namespace MuhammadUmar\PPPGateway\Http\Controllers;
 
-use MuhammadUmar\PPPStripe\Services\Pricing\PPPService;
+use MuhammadUmar\PPPGateway\Services\Pricing\PPPService;
 use Illuminate\Http\Request;
 use Laravel\Cashier\Concerns\ManagesCustomer;
 

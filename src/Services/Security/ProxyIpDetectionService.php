@@ -1,6 +1,6 @@
 <?php
 
-namespace MuhammadUmar\PPPStripe\Services\Security;
+namespace MuhammadUmar\PPPGateway\Services\Security;
 
 final class ProxyIpDetectionService
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace MuhammadUmar\PPPStripe\Commands;
+namespace MuhammadUmar\PPPGateway\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
@@ -15,7 +15,6 @@ class ImportPPPData extends Command
 
     public function handle()
     {
-        // 1. Path to your CSV file
         // Ensure the file is in storage/app or specify the full path
         $csvFilePath = storage_path('app/private/ppp_world.csv'); 
 
@@ -30,7 +29,6 @@ class ImportPPPData extends Command
             $rowNumber = 0;
             $recordsProcessed = 0;
 
-            // Begin a transaction for data integrity
             DB::beginTransaction();
 
             try {
@@ -43,11 +41,10 @@ class ImportPPPData extends Command
                     }
 
                     // 2. Extract Basic Info
-                    // Assuming Column 0 is Name, Column 1 is Code based on your description
+                    // Column 0 is Name, Column 1 is Code
                     $countryName = isset($data[0]) ? trim($data[0]) : null;
                     $countryCode = isset($data[1]) ? trim($data[1]) : null;
 
-                    // Skip invalid rows where code is missing
                     if (empty($countryCode)) {
                         continue;
                     }
@@ -68,7 +65,6 @@ class ImportPPPData extends Command
                         continue;
                     }
 
-                    // 4. Update or Insert into Database
                     // We match by 'country_code' to avoid duplicates.
                     DB::table('ppp_data')->updateOrInsert(
                         ['country_code' => $countryCode], // Search criteria
@@ -82,7 +78,6 @@ class ImportPPPData extends Command
                     $recordsProcessed++;
                 }
 
-                // Commit the transaction
                 DB::commit();
                 fclose($handle);
                 

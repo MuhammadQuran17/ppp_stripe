@@ -1,6 +1,6 @@
 {
-  "name": "muhammad-umar/ppp-stripe",
-  "description": "Laravel package for Purchasing Power Parity (PPP) pricing adjustment with Stripe integration",
+  "name": "muhammad-umar/ppp-gateway",
+  "description": "Purchasing Power Parity (PPP) fair pricing adjustment by countries with Stripe (or any other payment gateway supported by Laravel Cashier) integration powered by data from the World Bank",
   "type": "library",
   "license": "MIT",
   "authors": [
@@ -18,18 +18,18 @@
   },
   "autoload": {
     "psr-4": {
-      "MuhammadUmar\\PPPStripe\\": "src/"
+      "MuhammadUmar\\PPPGateway\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "MuhammadUmar\\PPPStripe\\Tests\\": "tests/"
+      "MuhammadUmar\\PPPGateway\\Tests\\": "tests/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "MuhammadUmar\\PPPStripe\\PPPStripeServiceProvider"
+        "MuhammadUmar\\PPPGateway\\PPPGatewayServiceProvider"
       ],
       "aliases": {}
     }
