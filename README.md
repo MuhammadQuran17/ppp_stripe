@@ -1,8 +1,13 @@
 # Purchasing Power Parity by country with Stripe or other payment gateway (Laravel & Cashier)
 
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/qurandeep)
+
 Detailed article is availabe at [https://docs.agenytics.com/blog/ppp-stripe](https://docs.agenytics.com/blog/ppp-stripe)
 
 Implementing **Purchasing Power Parity (PPP) pricing per country** for a **Stripe Checkout** purchase flow. But you can use it for any other payment gateway, like PayPal, Paddle, Lemon Squeezy, etc. This package uses [World Bank PPP data](https://data.worldbank.org/indicator/PA.NUS.PPPC.RF) and [TrustIP](https://trustip.io) to detect VPN/Proxy.
+
+
+
 
 ### Installation in Existing Laravel Project
 
