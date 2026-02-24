@@ -39,6 +39,7 @@ Implementing **Purchasing Power Parity (PPP) pricing per country** for a **Strip
    ```
 
 We have used lifetime product for demonstration purposes. You can use any other product you want.
+
 5. **Configure environment variables**
    ```bash
    STRIPE_LIFETIME_PRODUCT_ID=prod_xxxxx
