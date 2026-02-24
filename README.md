@@ -2,7 +2,7 @@
 
 Detailed article is availabe at [https://docs.agenytics.com/blog/ppp-stripe](https://docs.agenytics.com/blog/ppp-stripe)
 
-Implementing **Purchasing Power Parity (PPP) pricing per country** for a **Stripe Checkout** purchase flow. But you can use it for any other payment gateway that supports Laravel Cashier. This package uses [World Bank PPP data](https://data.worldbank.org/indicator/PA.NUS.PPPC.RF) and [TrustIP](https://trustip.io) to detect VPN/Proxy.
+Implementing **Purchasing Power Parity (PPP) pricing per country** for a **Stripe Checkout** purchase flow. But you can use it for any other payment gateway, like PayPal, Paddle, Lemon Squeezy, etc. This package uses [World Bank PPP data](https://data.worldbank.org/indicator/PA.NUS.PPPC.RF) and [TrustIP](https://trustip.io) to detect VPN/Proxy.
 
 ### Installation in Existing Laravel Project
 
