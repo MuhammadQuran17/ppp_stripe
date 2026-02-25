@@ -7,10 +7,8 @@ use Illuminate\Support\Facades\DB;
 
 class ImportPPPData extends Command
 {
-    // The name and signature of the console command.
     protected $signature = 'import:ppp';
 
-    // The console command description.
     protected $description = 'Import latest PPP values from CSV into the database';
 
     public function handle()
@@ -35,12 +33,11 @@ class ImportPPPData extends Command
                 while (($data = fgetcsv($handle, null, ",", '"', '\\')) !== FALSE) {
                     $rowNumber++;
 
-                    // 1. Skip Header Rows (first 5 rows)
+                    // Skip Header Rows (first 5 rows)
                     if ($rowNumber < 6) {
                         continue;
                     }
 
-                    // 2. Extract Basic Info
                     // Column 0 is Name, Column 1 is Code
                     $countryName = isset($data[0]) ? trim($data[0]) : null;
                     $countryCode = isset($data[1]) ? trim($data[1]) : null;
@@ -49,7 +46,7 @@ class ImportPPPData extends Command
                         continue;
                     }
 
-                    // 3. Find Latest PPP Value (Iterate backwards)
+                    // Find Latest PPP Value (Iterate backwards)
                     $latestValue = null;
                     $columnCount = count($data);
 
@@ -67,7 +64,7 @@ class ImportPPPData extends Command
 
                     // We match by 'country_code' to avoid duplicates.
                     DB::table('ppp_data')->updateOrInsert(
-                        ['country_code' => $countryCode], // Search criteria
+                        ['country_code' => $countryCode],
                         [
                             'country_name' => $countryName,
                             'latest_ppp_value' => $latestValue,
